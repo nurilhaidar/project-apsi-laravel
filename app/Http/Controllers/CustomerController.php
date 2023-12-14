@@ -81,4 +81,9 @@ class CustomerController extends Controller
     {
         //
     }
+
+    public function pricelist()
+    {
+        return view('user.content.pricelist');
+    }
 }

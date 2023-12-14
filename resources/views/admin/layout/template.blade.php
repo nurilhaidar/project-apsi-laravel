@@ -44,8 +44,6 @@
     <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/dist/js/adminlte.min.js') }}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('admin/dist/js/demo.js') }}"></script>
     <!-- DataTables  & Plugins -->
     <script src="{{ url('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -59,7 +57,25 @@
     <script src="{{ url('admin/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ url('admin/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ url('admin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <!-- Toastr -->
+    {{-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    @isset($success)
+        <script>
+            $(document).ready(function() {
+                toastr.success('{{ $success }}');
+            });
+        </script>
+    @endisset
 
+    @isset($failed)
+        <script>
+            $(document).ready(function() {
+                toastr.error('{{ $failed }}');
+            });
+        </script>
+    @endisset
     @stack('script')
 </body>
 

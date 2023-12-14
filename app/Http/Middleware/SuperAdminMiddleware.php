@@ -17,8 +17,12 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->status != 0) {
-            return redirect('dashboard');
+        if (Auth::check()) {
+            if (Auth::user()->status != 0) {
+                return redirect('dashboard');
+            }
         }
+
+        return $next($request);
     }
 }

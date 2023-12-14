@@ -1,4 +1,4 @@
-@extends('user.layout.template');
+@extends('user.layout.template')
 @push('style')
     <style>
         .custom-btn {

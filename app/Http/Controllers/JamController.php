@@ -53,7 +53,7 @@ class JamController extends Controller
         if ($insert) {
             return redirect('dashboard/jam')->with('success', 'Jam Berhasil Ditambahkan');
         } else {
-            return redirect('dashboard/jam')->with('error', 'Jam Gagal Ditambahkan');
+            return redirect('dashboard/jam')->with('failed', 'Jam Gagal Ditambahkan');
         }
     }
 
@@ -105,7 +105,7 @@ class JamController extends Controller
         if ($update) {
             return redirect('dashboard/jam')->with('success', 'Jam Berhasil Diubah');
         } else {
-            return redirect('dashboard/jam')->with('error', 'Jam Gagal Diubah');
+            return redirect('dashboard/jam')->with('failed', 'Jam Gagal Diubah');
         }
     }
 
@@ -121,7 +121,7 @@ class JamController extends Controller
         if ($delete) {
             return redirect('dashboard/jam')->with('success', 'Jam Berhasil Dihapus');
         } else {
-            return redirect('dashboard/jam')->with('error', 'Jam Gagal Dihapus');
+            return redirect('dashboard/jam')->with('failed', 'Jam Gagal Dihapus');
         }
     }
 }

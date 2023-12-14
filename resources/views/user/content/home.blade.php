@@ -8,13 +8,11 @@
                     <div class="text-center text-xxl-start">
                         <h1 class="display-3 fw-bolder mb-5"><span style="color: burlywood">BOOK YOUR PHOTO
                                 STUDIO !</span></h1>
-                        <div class="d-grid d-sm-flex mb-3">
-                            <a class="btn btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url('order') }}">BOOK
-                                NOW</a>
-                        </div>
-                        <div class="d-grid d-sm-flex mb-3">
-                            <a class="btn btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url('order') }}">BOOK
-                                NOW</a>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                            <a class="btn btn-outline-light btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                                href="{{ url('order') }}">BOOK NOW</a>
+                            <a class="btn btn-outline-light btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                                href="{{ url('pricelist') }}">PRICELIST</a>
                         </div>
                     </div>
                 </div>

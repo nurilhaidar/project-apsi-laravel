@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CustomerController::class, 'index']);
+Route::get('pricelist', [CustomerController::class, 'pricelist']);
 
 // User
 Route::prefix('order')->group(function () {
