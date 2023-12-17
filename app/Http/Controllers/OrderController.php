@@ -84,6 +84,7 @@ class OrderController extends Controller
                 'nama' => 'required|string|max:50',
                 'no_hp' => 'required|string|min:1|max:13',
                 'tema' => 'required|string',
+                'pembayaran' => 'required'
             ],
             [
                 'tema.required' => 'Tema harus diisi',
@@ -91,6 +92,7 @@ class OrderController extends Controller
                 'no_hp.required' => 'Nomor HP harus diisi',
                 'no_hp.min' => 'Nomor HP harus 13 digit',
                 'no_hp.max' => 'Nomor HP harus 13 digit',
+                'pembayaran.required' => 'Pembayaran harus diisi',
             ]
         );
 
@@ -103,7 +105,7 @@ class OrderController extends Controller
         $transaksiStore = Transaksi::create([
             'transaksi_id' => Rand('1', '999'),
             'total_harga' => $request->total,
-            'status' => 'Belum Bayar',
+            'status' => $request->pembayaran,
         ]);
 
         $orderStore = Order::create([

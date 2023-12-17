@@ -69,10 +69,13 @@
                                                 <td>{{ $data->transaksi->total_harga }}</td>
                                             </tr>
                                             <tr>
+                                                <td>Pembayaran</td>
+                                                <td>:</td>
+                                                <td>{{ $data->transaksi->status }}</td>
+                                            </tr>
+                                            <tr>
                                                 <td colspan="3" class="text-center">
-                                                    <button class="btn btn-outline-danger"
-                                                        style="margin-right: 50px">Batal</button>
-                                                    <button class="btn btn-outline-dark">Bayar</button>
+                                                    <button class="btn btn-outline-dark">Print</button>
                                                 </td>
                                             </tr>
                                         </tbody>

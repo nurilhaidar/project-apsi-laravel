@@ -47,7 +47,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="text" name="password"
+                                <input type="password" name="password"
                                     class="form-control @error('password') is-invalid @enderror"
                                     value="{{ isset($data) ? $data->password : '' }}">
                                 @error('password')
