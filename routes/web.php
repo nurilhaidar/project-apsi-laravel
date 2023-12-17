@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
         // Order Route
         Route::get('order', [OrderController::class, 'showAll']);
         Route::get('order/print', [OrderController::class, 'print']);
+        Route::delete('order/{id}', [OrderController::class, 'destroy']);
 
         // Tema Route
         Route::resource('tema', TemaController::class);

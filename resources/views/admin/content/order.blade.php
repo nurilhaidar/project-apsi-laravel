@@ -73,10 +73,14 @@
                                             <td>{{ $item->transaksi->total_harga }}</td>
                                             <td>{{ $item->transaksi->status }}</td>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-sm btn-danger"
-                                                    onclick="confirm('Anda yakin ingin menghapus ?');">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
+                                                <form action="{{ url('dashboard/order/' . $item->order_id) }}"
+                                                    method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-danger"
+                                                        onclick="confirm('Anda yakin ingin menghapus order ini')"><i
+                                                            class="fas fa-trash"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

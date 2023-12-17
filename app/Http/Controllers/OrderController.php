@@ -178,7 +178,17 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transaksi = Order::select('transaksi_id')->where('order_id', $id)->first();
+
+        $hapusDetail = DetailOrder::where('order_id', $id)->delete();
+        $hapusOrder = Order::where('order_id', $id)->delete();
+        $hapusTransaksi = Transaksi::where('transaksi_id', $transaksi)->delete();
+
+        if ($hapusDetail && $hapusOrder && $hapusTransaksi) {
+            return redirect()->back()->with('alert', 'Berhasil menghapus data');
+        } else {
+            return redirect()->back()->with('alert', 'Gagal menghapus data');
+        }
     }
 
     public function showAll(Request $request)
