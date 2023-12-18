@@ -75,7 +75,8 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="3" class="text-center">
-                                                    <button class="btn btn-outline-dark">Print</button>
+                                                    <button class="btn btn-outline-dark"
+                                                        onclick="printPage()">Print</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -89,5 +90,11 @@
         </div>
     </div>
 </body>
+<script>
+    function printPage() {
+        // Trigger the print dialog
+        window.print();
+    }
+</script>
 
 </html>

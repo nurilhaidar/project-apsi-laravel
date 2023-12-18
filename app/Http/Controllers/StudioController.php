@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Studio;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class StudioController extends Controller
@@ -133,12 +134,16 @@ class StudioController extends Controller
      */
     public function destroy($id)
     {
-        $delete = Studio::where('studio_id', $id)->delete();
+        try {
+            $delete = Studio::where('studio_id', $id)->delete();
 
-        if ($delete) {
-            return redirect('dashboard/studio')->with('success', 'Data berhasil dihapus');
-        } else {
-            return redirect('dashboard/studio')->with('failed', 'Data gagal dihapus');
+            if ($delete) {
+                return redirect('dashboard/studio')->with('success', 'Data berhasil dihapus');
+            } else {
+                return redirect('dashboard/studio')->with('failed', 'Data gagal dihapus');
+            }
+        } catch (QueryException) {
+            return redirect('dashboard/studio')->with('failed', 'Data gagal dihapus karena terdapat data lain yang terkait');
         }
     }
 }

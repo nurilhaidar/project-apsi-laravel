@@ -51,6 +51,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Order ID</th>
                                         <th>Nama</th>
                                         <th>No Telp</th>
                                         <th>Tanggal</th>
@@ -65,6 +66,7 @@
                                     @foreach ($data as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->order_id }}</td>
                                             <td>{{ $item->customer->nama }}</td>
                                             <td>{{ $item->customer->no_hp }}</td>
                                             <td>{{ date('d-m-Y', strtotime($item->tgl)) }}</td>

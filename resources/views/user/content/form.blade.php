@@ -59,14 +59,14 @@
                                     </span>
                                     <div class="form-check" style="margin-left: 5px">
                                         <input class="form-check-input" type="radio" name="pembayaran" id="exampleRadios1"
-                                            value="tunai">
+                                            value="Tunai">
                                         <label class="form-check-label" for="exampleRadios1">
                                             Tunai
                                         </label>
                                     </div>
                                     <div class="form-check" style="margin-left: 5px">
                                         <input class="form-check-input" type="radio" name="pembayaran" id="exampleRadios2"
-                                            value="debit">
+                                            value="Debit">
                                         <label class="form-check-label" for="exampleRadios2">
                                             Debit
                                         </label>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\JamOrder;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class JamController extends Controller
@@ -117,11 +118,15 @@ class JamController extends Controller
      */
     public function destroy($id)
     {
-        $delete = JamOrder::where('order_jam_id', $id)->delete();
-        if ($delete) {
-            return redirect('dashboard/jam')->with('success', 'Jam Berhasil Dihapus');
-        } else {
-            return redirect('dashboard/jam')->with('failed', 'Jam Gagal Dihapus');
+        try {
+            $delete = JamOrder::where('order_jam_id', $id)->delete();
+            if ($delete) {
+                return redirect('dashboard/jam')->with('success', 'Jam Berhasil Dihapus');
+            } else {
+                return redirect('dashboard/jam')->with('failed', 'Jam Gagal Dihapus');
+            }
+        } catch (QueryException) {
+            return redirect('dashboard/jam')->with('failed', 'Jam Gagal Dihapus, karena data masih digunakan');
         }
     }
 }

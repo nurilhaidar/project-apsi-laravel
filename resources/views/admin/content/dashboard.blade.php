@@ -27,7 +27,6 @@
                             <h3>{{ $orderToday }}</h3>
                             <p>Peminjaman Hari Ini</p>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
@@ -37,7 +36,6 @@
                             <h3>{{ $orderMonth }}</h3>
                             <p>Peminjaman Bulan Ini</p>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6">
@@ -47,7 +45,6 @@
                             <h3>{{ $totalMonth }}</h3>
                             <p>Total Penjualan Hari Ini</p>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>

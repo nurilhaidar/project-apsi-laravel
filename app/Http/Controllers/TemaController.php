@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tema;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class TemaController extends Controller
@@ -117,12 +118,16 @@ class TemaController extends Controller
      */
     public function destroy($id)
     {
-        $delete = Tema::where('tema_id', $id)->delete();
+        try {
+            $delete = Tema::where('tema_id', $id)->delete();
 
-        if ($delete) {
-            return redirect('dashboard/tema')->with('success', 'Data berhasil dihapus');
-        } else {
-            return redirect('dashboard/tema')->with('failed', 'Data gagal dihapus');
+            if ($delete) {
+                return redirect('dashboard/tema')->with('success', 'Data berhasil dihapus');
+            } else {
+                return redirect('dashboard/tema')->with('failed', 'Data gagal dihapus');
+            }
+        } catch (QueryException) {
+            return redirect('dashboard/tema')->with('failed', 'Data gagal dihapus karena terdapat data lain yang terkait');
         }
     }
 }
